@@ -227,6 +227,25 @@ contract VesperPool is ERC4626, ERC20Permit, Ownable, Shutdownable {
         return _getPoolStorage()._universalFee;
     }
 
+    /// Below functions are added for compatibility with V6 strategies
+    /// @notice This function is needed for compatibility with V6 strategies.
+    /// @return owner address
+    function governor() external view returns (address) {
+        return owner();
+    }
+
+    /// @notice This function is needed for compatibility with V6 strategies.
+    /// @return zero address, as there is no PoolAccountant in V6 pools
+    function poolAccountant() external pure returns (address) {
+        return address(0);
+    }
+
+    /// @notice This function is needed for compatibility with V6 strategies.
+    /// @return asset address
+    function token() external view returns (address) {
+        return asset();
+    }
+
     /**************************************************************************
      *                             User functions                             *
      *************************************************************************/
