@@ -77,7 +77,7 @@ contract VesperPool is ERC4626, ERC20Permit, Ownable, Shutdownable, UUPSUpgradea
         uint256 debtRatio; // % of asset allocation
     }
 
-    /// @custom:storage-location erc7201:vesper.storage.pool
+    /// @custom:storage-location erc7201:vesper.storage.VesperPool
     struct PoolStorage {
         // PoolRewards contract address
         address _poolRewards;
